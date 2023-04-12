@@ -1,10 +1,10 @@
 public class BankAccount {
-    String customerName;
+    private String customerName;
 
-    int accountNumber;
-    double balance;
+    private int accountNumber;
+    private double balance;
 
-    static int newAccountNumber = 100000;
+    static private int newAccountNumber = 100000;
 
     public BankAccount(String customerName, int accountNumber, double balance) {
         this.customerName = customerName;
@@ -47,6 +47,10 @@ public class BankAccount {
     }
 
     public void withdraw(double balance) {
-        this.balance -= balance;
+        if (this.balance - balance < 0) {
+            System.out.println("Error: balance will be less than zero");
+        } else {
+            this.balance -= balance;
+        }
     }
 }
