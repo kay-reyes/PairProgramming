@@ -1,18 +1,18 @@
 public class BankAccount {
-    String customerName;
+    private String customerName;
 
-    int accountNumber;
-    double balance;
-    String[] accType = {"Regular","Current","Savings"};
+    private int accountNumber;
+    private double balance;
+    private String[] accType = {"Regular", "Current", "Savings"};
 
-    static int newAccountNumber = 100000;
-
+    static private int newAccountNumber = 100000;
 
     public BankAccount(String customerName, int accountNumber, double balance) {
         this.customerName = customerName;
         this.accountNumber = accountNumber;
-        balance = balance;
+        this.balance = balance;
     }
+    
     public BankAccount(String customerName, double balance) {
         this(customerName,0,balance);
         setAccountNumber(accountNumber);
@@ -43,9 +43,15 @@ public class BankAccount {
         return balance;
     }
 
-    public void setBalance(double balance) {
-        balance = balance;
+    public void deposit(double balance) {
+        this.balance += balance;
     }
 
-
+    public void withdraw(double balance) {
+        if (this.balance - balance < 0) {
+            System.out.println("Error: balance will be less than zero");
+        } else {
+            this.balance -= balance;
+        }
+    }
 }

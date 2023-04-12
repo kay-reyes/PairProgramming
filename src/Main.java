@@ -1,10 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        var kayAcc = new BankAccount("kay",100.1);
-        var tommyAcc = new BankAccount("Tommy",300.1);
+        var bankAccount = new BankAccount("kay",100.1);
+        var bankAc = new BankAccount("Tommy",300.1);
 
-        System.out.println(kayAcc.accountNumber);
-        System.out.println(tommyAcc.accountNumber);
+        System.out.println(bankAccount.getAccountNumber());
+        System.out.println(bankAc.getAccountNumber());
 
     }
 }
