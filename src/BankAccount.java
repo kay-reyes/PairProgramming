@@ -1,9 +1,8 @@
 public class BankAccount {
     private String customerName;
 
-    private int accountNumber;
-    private double balance;
-    private String[] accType = {"Regular", "Current", "Savings"};
+    int accountNumber;
+    double balance;
 
     static private int newAccountNumber = 100000;
 
