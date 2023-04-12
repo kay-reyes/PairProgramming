@@ -6,5 +6,9 @@ public class Main {
         System.out.println(bankAccount.getAccountNumber());
         System.out.println(bankAc.getAccountNumber());
 
+        CurrentAccount current = new CurrentAccount("Kuba", 100);
+
+        current.withdraw(500);
+
     }
 }

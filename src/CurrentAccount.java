@@ -1,22 +1,21 @@
-public class CurrentAccount {
-	var currentAcc = new BankAccount();
+public class CurrentAccount extends BankAccount {
 
-    double overdraft = 300;
-    
-    if (currentAcc.accType = 1 & currentAcc.withdraw > currentAcc.balance + overdraft) {
-        System.out.println("You are unable to withdraw this value. You have been sent back to the main menu.");
-    }
-}
-    
-    /**var currentAcc = new BankAccount();
-    double overdraft = 300;
-		
-	double withdraw = 500;
-		
-	if (withdraw > balance + overdraft) {
-		System.out.println("You are unable to withdraw this value. You have been sent back to the main menu.");
+    private double overdraftLimit = 300;
+
+	CurrentAccount(String name, double balance, int accountNum) {
+		super(name, accountNum, balance);
 	}
-	else {
-		balance = balance - withdraw;
-		System.out.printf("Your new balance is: %d", balance);
-	}**/
+
+	CurrentAccount(String name, double balance) {
+		super(name, balance);
+	}
+    
+	@Override
+	public void withdraw(double balance) {
+		if ((this.balance + overdraftLimit) - balance < 0) {
+			System.out.println("Error: balance will exceed your overdraft");
+		} else {
+			this.balance -= balance;
+		}
+	}
+}
