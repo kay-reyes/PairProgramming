@@ -3,6 +3,7 @@ public class BankAccount {
 
     int accountNumber;
     double balance;
+    String[] accType = {"Regular","Current","Savings"};
 
     static int newAccountNumber = 100000;
 
@@ -37,9 +38,6 @@ public class BankAccount {
 
         this.accountNumber = accountNumber;
     }
-
-
-
 
     public double getBalance() {
         return balance;
