@@ -6,12 +6,12 @@ public class BankAccount {
 
     static int newAccountNumber = 100000;
 
-
     public BankAccount(String customerName, int accountNumber, double balance) {
         this.customerName = customerName;
         this.accountNumber = accountNumber;
-        balance = balance;
+        this.balance = balance;
     }
+    
     public BankAccount(String customerName, double balance) {
         this(customerName,0,balance);
         setAccountNumber(accountNumber);
@@ -38,16 +38,15 @@ public class BankAccount {
         this.accountNumber = accountNumber;
     }
 
-
-
-
     public double getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
-        balance = balance;
+    public void deposit(double balance) {
+        this.balance += balance;
     }
 
-
+    public void withdraw(double balance) {
+        this.balance -= balance;
+    }
 }
